@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   constructor(private cartService: CartService) {}
 
-  cols = 1;
+  cols = 3;
   rowHeight = ROW_HEIGHT[this.cols];
   category: string | undefined;
   products: Product[] | undefined;
