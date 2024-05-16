@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-
+require('dotenv').config();
 
 const app = express();
 app.use(express.static('public'));
@@ -9,7 +9,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors({ origin:true, credentials: true }));
 
-const stripe = require('stripe')("sk_test_51PGmY700ssKgyPkdwyMZ1KwC1CGG22F1onnhVMioVpcmlkFbKEowxWY7zw5kG4Z4PkOGXLEQPf88iMyG0qmb6jmS008sGH5PUK");
+const port = process.env.PORT;
+const stripeSekretKey = process.env.STRIPE_SEKRET_KEY;
+
+const stripe = require('stripe')(stripeSekretKey);
 
 app.post('/checkout', async(req, res, next) => {
     try {
@@ -37,4 +40,4 @@ app.post('/checkout', async(req, res, next) => {
     }
 })
 
-app.listen(4242, () => console.log('server is running'));
+app.listen(port, () => console.log(`server is running on sever http://localhost:${port}`));
