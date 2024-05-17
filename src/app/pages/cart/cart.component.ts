@@ -77,7 +77,7 @@ export class CartComponent implements OnInit {
   }
 
   onCheckout(): void {
-    this.http.post('http://localhost:4242/checkout', {
+    this.http.post('https://server-webshop-ftrij7jzp-dka888s-projects.vercel.app/checkout', {
       items: this.cart.items
     }
     ).subscribe(async(res: any) => {

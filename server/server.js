@@ -1,18 +1,21 @@
-const express = require('express');
-const cors = require('cors');
-const bodyParser = require('body-parser');
-require('dotenv').config();
+import express from 'express';
+import cors from 'cors';
+import { pkg } from 'body-parser';
+import 'dotenv/config';
+import Stripe from 'stripe';
+
+const {json} = pkg;
 
 const app = express();
 app.use(express.static('public'));
 // app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(json());
 app.use(cors({ origin:true, credentials: true }));
 
 const port = process.env.PORT;
 const stripeSekretKey = process.env.STRIPE_SEKRET_KEY;
 
-const stripe = require('stripe')(stripeSekretKey);
+const stripe = new Stripe(stripeSekretKey);
 
 app.post('/checkout', async(req, res, next) => {
     try {
