@@ -9,6 +9,7 @@ import { CartService } from '../../services/cart.service';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { loadStripe } from '@stripe/stripe-js';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-cart',
@@ -77,7 +78,7 @@ export class CartComponent implements OnInit {
   }
 
   onCheckout(): void {
-    this.http.post('https://server-webshop-ftrij7jzp-dka888s-projects.vercel.app/checkout', {
+    this.http.post( `${environment.server}/checkout`, {
       items: this.cart.items
     }
     ).subscribe(async(res: any) => {

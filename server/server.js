@@ -1,11 +1,10 @@
 import express from 'express';
 import cors from 'cors';
-import { pkg } from 'body-parser';
+import pkg from 'body-parser';
 import 'dotenv/config';
 import Stripe from 'stripe';
 
-const {json} = pkg;
-
+const { json } = pkg
 const app = express();
 app.use(express.static('public'));
 // app.use(bodyParser.urlencoded({ extended: false }));
