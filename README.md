@@ -1,27 +1,60 @@
-# Store
+Webshop
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
+Webshop is an e-commerce application that allows users to browse products, add them to a shopping cart, edit the cart, and proceed to checkout using Stripe for payments.
 
-## Development server
+Features
+- Browse and search for products
+- Add products to the shopping cart
+- Edit items in the shopping cart
+- Proceed to checkout and make payments via Stripe
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Technologies Used
+- Angular
+- Angular Material
+- Tailwind CSS
+- Stripe
+- Node.js
+- Express.js
 
-## Code scaffolding
+System Requirements
+- Node.js v20
+- Angular CLI
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Installation
+Follow these steps to install and run the project locally:
 
-## Build
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-repo/webshop.git
+   cd webshop
+   ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. Install dependencies for the frontend:
+   ```sh
+   npm install
+   ```
 
-## Running unit tests
+3. Install dependencies for the backend:
+   ```sh
+   cd server
+   npm install
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Running the Application
+To run the application, you will need two terminal:
 
-## Running end-to-end tests
+1. In the first terminal, start the frontend server:
+   ```sh
+   npm run start
+   ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+2. In the second terminal, start the backend server:
+   ```sh
+   cd server
+   node server.js
+   ```
+Usage
+- Browse products on the homepage
+- Add products to your shopping cart
+- View and edit items in the shopping cart
+- Proceed to checkout to complete the purchase
